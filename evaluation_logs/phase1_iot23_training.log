@@ -1,0 +1,5 @@
+2025-09-27 02:18:05,768 - src.common.utils - INFO - Random seed set to 42
+2025-09-27 02:18:05,768 - __main__ - INFO - Training device type classifier
+2025-09-27 02:18:05,768 - __main__ - INFO - Starting Device classifier training...
+2025-09-27 02:18:05,772 - __main__ - ERROR - Device classifier training failed after 0.00s
+2025-09-27 02:18:05,772 - __main__ - ERROR - Device classifier training failed: 'device_type'

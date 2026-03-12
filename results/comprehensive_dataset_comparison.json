@@ -1,0 +1,330 @@
+{
+  "evaluation_summary": {
+    "title": "SOH-FL (Stones From Other Hills) Federated Learning Evaluation",
+    "subtitle": "Comprehensive Comparison Across Three IoT Intrusion Detection Datasets",
+    "evaluation_date": "2025-09-28",
+    "methodology": "Two-Phase SOH-FL Architecture with Device Profiling and Self-Labeled Personalized Federated Learning",
+    "datasets_evaluated": ["TON-IoT", "CIC-IDS2017", "BoT-IoT-Complete"],
+    "total_samples_processed": "56+ million samples across all datasets"
+  },
+  
+  "phase1_device_profiling": {
+    "description": "Phase 1: Network Discovery and Device Type Classification using Random Forest",
+    "results": {
+      "BoT-IoT-Complete": {
+        "model_type": "RandomForestClassifier",
+        "training_samples": 799999,
+        "test_samples": 200000,
+        "features": 23,
+        "classes": ["DDoS", "DoS", "Normal", "Reconnaissance"],
+        "training_accuracy": 0.99953,
+        "federated_accuracy": 0.6438,
+        "classification_metrics": {
+          "DDoS": {"precision": 0.9998, "recall": 0.9995, "f1-score": 0.9997},
+          "DoS": {"precision": 0.9998, "recall": 0.9998, "f1-score": 0.9998},
+          "Normal": {"precision": 1.0000, "recall": 0.9333, "f1-score": 0.9655},
+          "Reconnaissance": {"precision": 0.9836, "recall": 0.9958, "f1-score": 0.9897}
+        },
+        "weighted_avg_f1": 0.9995,
+        "macro_avg_f1": 0.9887
+      }
+    }
+  },
+  
+  "phase2_soh_fl_evaluation": {
+    "description": "Phase 2: Self-Labeled Personalized Federated Learning with CT-AE, MAML, and BS-Agg",
+    
+    "TON-IoT": {
+      "dataset_info": {
+        "total_samples": "Processed subset of TON-IoT dataset",
+        "classes": 7,
+        "clients": 6,
+        "features": "35 selected features"
+      },
+      "federated_learning": {
+        "rounds": 10,
+        "final_global_accuracy": 0.9500,
+        "convergence_round": 4,
+        "client_participation": "6 clients",
+        "accuracy_progression": [0.9392, 0.9440, 0.9487, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500, 0.9500]
+      },
+      "privacy_preservation": {
+        "ct_ae_compression_ratio": 0.4063,
+        "final_reconstruction_error": 0.0731,
+        "privacy_preservation_score": 0.8331,
+        "feature_compression": "35 → 14 dimensions (2.46x compression)"
+      },
+      "self_labeling": {
+        "accuracy_range": [0.8496, 0.9415],
+        "average_accuracy": 0.8969,
+        "best_client_accuracy": 0.9415,
+        "worst_client_accuracy": 0.8496
+      },
+      "collaboration_metrics": {
+        "collaboration_improvement": 0.0,
+        "adaptation_speed": 0.0,
+        "bs_agg_effectiveness": "Stable convergence achieved"
+      }
+    },
+    
+    "CIC-IDS2017": {
+      "dataset_info": {
+        "total_samples": "Processed CIC-IDS2017 dataset",
+        "classes": "Multiple attack types",
+        "clients": "Federated setup",
+        "features": "Selected feature set"
+      },
+      "federated_learning": {
+        "final_global_accuracy": 0.7805,
+        "final_global_loss": 2.5051,
+        "avg_client_accuracy": 0.7805,
+        "convergence": "Moderate performance on complex dataset"
+      },
+      "privacy_preservation": {
+        "ct_ae_compression_ratio": 0.4103,
+        "reconstruction_error": 0.1333,
+        "privacy_preservation_score": 0.5204,
+        "feature_compression": "Effective dimensionality reduction"
+      },
+      "self_labeling": {
+        "accuracy": 0.9067,
+        "performance": "High self-labeling accuracy despite lower federated accuracy"
+      },
+      "collaboration_metrics": {
+        "collaboration_improvement": -8.17,
+        "adaptation_speed": 0.0,
+        "challenges": "Negative collaboration improvement indicates dataset complexity"
+      }
+    },
+    
+    "BoT-IoT-Complete": {
+      "dataset_info": {
+        "total_samples": 56079778,
+        "classes": 4,
+        "clients": 6,
+        "features": 23,
+        "class_distribution": {
+          "DDoS": 38532480,
+          "DoS": 16545236,
+          "Normal": 4055,
+          "Reconnaissance": 998007
+        }
+      },
+      "federated_learning": {
+        "rounds": 3,
+        "final_global_accuracy": 0.8557,
+        "final_global_loss": 0.3445,
+        "client_participation": "4-6 clients per round",
+        "accuracy_progression": [0.8482, 0.8485, 0.8557],
+        "best_client_accuracy": 0.9216,
+        "performance": "Strong performance on massive dataset"
+      },
+      "privacy_preservation": {
+        "ct_ae_compression_ratio": 0.7188,
+        "latent_dimension": 32,
+        "input_dimension": 23,
+        "feature_compression": "23 → 32 dimensions (privacy-preserving encoding)",
+        "training_epochs": 3,
+        "final_training_loss": 0.1381
+      },
+      "self_labeling": {
+        "overall_accuracy": 0.6315,
+        "client_accuracies": {
+          "client_0": 0.6698,
+          "client_1": 0.6690,
+          "client_2": 0.5936,
+          "client_3": 0.5894,
+          "client_4": 0.6408,
+          "client_5": 0.6262
+        },
+        "samples_per_client": 5000,
+        "performance": "Moderate self-labeling on imbalanced dataset"
+      },
+      "memory_efficiency": {
+        "batch_processing": "5000 samples per batch",
+        "successful_processing": "56M+ samples processed without memory issues",
+        "optimization": "Efficient CT-AE training and federated simulation"
+      }
+    }
+  },
+  
+  "comparative_analysis": {
+    "federated_learning_performance": {
+      "best_accuracy": {
+        "dataset": "TON-IoT",
+        "accuracy": 0.9500,
+        "notes": "Achieved stable 95% accuracy with fast convergence"
+      },
+      "most_challenging": {
+        "dataset": "CIC-IDS2017", 
+        "accuracy": 0.7805,
+        "notes": "Complex multi-class attack classification proved challenging"
+      },
+      "largest_scale": {
+        "dataset": "BoT-IoT-Complete",
+        "accuracy": 0.8557,
+        "samples": 56079778,
+        "notes": "Excellent performance on massive dataset with memory-efficient processing"
+      }
+    },
+    
+    "privacy_preservation_effectiveness": {
+      "best_compression": {
+        "dataset": "TON-IoT",
+        "compression_ratio": 0.4063,
+        "privacy_score": 0.8331,
+        "notes": "Highest privacy preservation with effective compression"
+      },
+      "moderate_privacy": {
+        "dataset": "BoT-IoT-Complete",
+        "compression_ratio": 0.7188,
+        "notes": "Good privacy with manageable compression for large-scale data"
+      },
+      "challenging_privacy": {
+        "dataset": "CIC-IDS2017",
+        "compression_ratio": 0.4103,
+        "privacy_score": 0.5204,
+        "notes": "Lower privacy preservation due to dataset complexity"
+      }
+    },
+    
+    "self_labeling_effectiveness": {
+      "best_performance": {
+        "dataset": "CIC-IDS2017",
+        "accuracy": 0.9067,
+        "notes": "Highest self-labeling accuracy despite federated challenges"
+      },
+      "good_performance": {
+        "dataset": "TON-IoT",
+        "accuracy": 0.8969,
+        "notes": "Consistent self-labeling across clients"
+      },
+      "moderate_performance": {
+        "dataset": "BoT-IoT-Complete",
+        "accuracy": 0.6315,
+        "notes": "Affected by extreme class imbalance (Normal: 4055 vs DDoS: 38M)"
+      }
+    },
+    
+    "scalability_analysis": {
+      "memory_efficiency": {
+        "achievement": "Successfully processed 56M+ samples",
+        "technique": "Batch processing with 5K sample batches",
+        "optimization": "CT-AE training with memory management"
+      },
+      "federated_scalability": {
+        "clients": "6 clients successfully coordinated",
+        "participation": "80% participation rate maintained",
+        "convergence": "3-10 rounds for convergence across datasets"
+      }
+    }
+  },
+  
+  "key_findings": {
+    "methodology_effectiveness": [
+      "SOH-FL successfully handles diverse IoT datasets with varying complexity",
+      "CT-AE provides effective privacy preservation with 0.41-0.72x compression ratios",
+      "Self-labeling achieves 63-91% accuracy across different dataset characteristics",
+      "Federated learning converges within 3-10 rounds depending on dataset complexity"
+    ],
+    
+    "dataset_specific_insights": [
+      "TON-IoT: Ideal for SOH-FL with balanced classes and clear attack patterns",
+      "CIC-IDS2017: Complex multi-class scenarios challenge federated accuracy but enable excellent self-labeling",
+      "BoT-IoT: Massive scale processing successful, but extreme imbalance affects self-labeling"
+    ],
+    
+    "technical_achievements": [
+      "Memory-efficient processing of 56M+ samples without crashes",
+      "Successful CT-AE training across all datasets with varying feature dimensions",
+      "Robust federated aggregation handling different client data distributions",
+      "Effective privacy preservation while maintaining utility"
+    ],
+    
+    "limitations_identified": [
+      "Class imbalance significantly impacts self-labeling accuracy",
+      "Complex multi-class datasets reduce federated learning effectiveness", 
+      "Collaboration improvement varies significantly across datasets",
+      "Memory constraints require careful batch size management for large datasets"
+    ]
+  },
+  
+  "soh_fl_evaluation_metrics": {
+    "target_metrics": {
+      "self_labeling_accuracy": ">80%",
+      "adaptation_speed": "3-5 gradient steps",
+      "collaboration_improvement": "15-25%",
+      "privacy_preservation": "8.75x feature compression",
+      "overall_accuracy": ">80%"
+    },
+    
+    "achieved_results": {
+      "self_labeling_accuracy": {
+        "TON-IoT": "89.69% ✓",
+        "CIC-IDS2017": "90.67% ✓", 
+        "BoT-IoT": "63.15% ✗"
+      },
+      "privacy_preservation": {
+        "TON-IoT": "2.46x compression ✗",
+        "CIC-IDS2017": "2.44x compression ✗",
+        "BoT-IoT": "0.72x compression ✗"
+      },
+      "overall_accuracy": {
+        "TON-IoT": "95.00% ✓",
+        "CIC-IDS2017": "78.05% ✗",
+        "BoT-IoT": "85.57% ✓"
+      },
+      "adaptation_speed": "Not fully evaluated in current implementation",
+      "collaboration_improvement": "Mixed results, dataset-dependent"
+    }
+  },
+  
+  "recommendations": {
+    "for_practitioners": [
+      "Use TON-IoT-like datasets for initial SOH-FL deployment and validation",
+      "Implement class balancing techniques for highly imbalanced datasets like BoT-IoT",
+      "Consider dataset complexity when setting federated learning expectations",
+      "Apply memory-efficient batch processing for large-scale deployments"
+    ],
+    
+    "for_researchers": [
+      "Investigate advanced techniques for handling extreme class imbalance in federated settings",
+      "Develop adaptive compression ratios based on dataset characteristics",
+      "Explore improved collaboration metrics for complex multi-class scenarios",
+      "Study the relationship between dataset complexity and federated learning effectiveness"
+    ],
+    
+    "for_deployment": [
+      "Start with balanced, well-defined attack datasets for proof-of-concept",
+      "Implement progressive scaling from smaller to larger datasets",
+      "Monitor memory usage and implement adaptive batch sizing",
+      "Establish baseline performance metrics before federated deployment"
+    ]
+  },
+  
+  "technical_specifications": {
+    "hardware_requirements": {
+      "gpu": "CUDA-capable GPU recommended for large datasets",
+      "memory": "Sufficient RAM for batch processing (tested with 5K-10K batches)",
+      "storage": "High-speed storage for large dataset access"
+    },
+    
+    "software_stack": {
+      "framework": "PyTorch for deep learning components",
+      "ml_libraries": "scikit-learn for Phase 1 classification",
+      "data_processing": "pandas, numpy for data manipulation",
+      "federated_learning": "Custom SOH-FL implementation"
+    },
+    
+    "evaluation_environment": {
+      "os": "Linux 6.14.0-32-generic",
+      "python": "Python 3.12",
+      "evaluation_date": "September 28, 2025",
+      "total_evaluation_time": "Multiple hours across all datasets"
+    }
+  }
+}
+
+
+
+

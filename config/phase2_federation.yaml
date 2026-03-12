@@ -1,0 +1,87 @@
+# Phase 2 Federation Configuration - SOH-FL Implementation
+
+federation:
+  # Basic federated learning parameters
+  total_rounds: 50
+  num_clients: 10
+  client_participation_rate: 0.6
+  local_training_epochs: 3
+  
+  # Optimization parameters
+  learning_rate: 0.005
+  batch_size: 40
+  weight_decay: 1e-4
+  
+  # MAML-specific parameters
+  maml_inner_lr: 0.001  # alpha in the paper
+  maml_outer_lr: 0.005  # beta in the paper
+  maml_inner_steps: 1   # single gradient step as specified
+  
+  # Self-labeling parameters
+  gamma_top_helpers: 3
+  similarity_threshold: 0.1
+  prelabeling_confidence: 0.8
+  adaptation_steps: 5
+  
+  # Data heterogeneity simulation
+  statistical_heterogeneity: 0.7  # Dirichlet concentration parameter
+  device_type_distribution: uniform  # uniform, concentrated, realistic
+  attack_type_distribution: imbalanced
+
+ct_autoencoder:
+  # Architecture
+  input_dim: 35  # matches phase1 top_k features
+  latent_dim: 32
+  hidden_dimensions: [128, 64]
+  activation: relu
+  dropout_rate: 0.2
+  
+  # Loss function weights
+  reconstruction_weight: 0.7
+  cosine_similarity_weight: 0.3
+  
+  # Training
+  epochs: 10
+  batch_size: 32
+  learning_rate: 0.001
+  early_stopping_patience: 3
+  
+similarity_aggregation:
+  # BS-Agg parameters
+  similarity_metric: cosine
+  aggregation_method: weighted_average
+  min_helpers: 1
+  max_helpers: 5
+  helper_weight_decay: 0.9
+
+local_adaptation:
+  # Fine-tuning parameters for personalization
+  adaptation_lr: 0.01
+  adaptation_steps: 5
+  adaptation_batch_size: 16
+  momentum: 0.9
+  
+# Attack simulation for testing
+attack_types:
+  - benign
+  - dos
+  - ddos
+  - reconnaissance
+  - theft
+  - man_in_middle
+  - malware_cnc
+  - data_exfiltration
+  - privilege_escalation
+  - zero_day
+
+# Evaluation metrics
+evaluation:
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1_score
+    - auc_roc
+  average_method: macro
+  save_confusion_matrix: true
+  save_per_client_metrics: true

@@ -1,0 +1,103 @@
+{
+  "model_type": "RandomForestClassifier",
+  "training_samples": 799999,
+  "test_samples": 200000,
+  "features": 23,
+  "classes": [
+    "DDoS",
+    "DoS",
+    "Normal",
+    "Reconnaissance"
+  ],
+  "accuracy": 0.99953,
+  "classification_report": {
+    "DDoS": {
+      "precision": 0.9998325799430772,
+      "recall": 0.9995342744869743,
+      "f1-score": 0.9996834049614446,
+      "support": 137420.0
+    },
+    "DoS": {
+      "precision": 0.9997966239576977,
+      "recall": 0.9997627359929498,
+      "f1-score": 0.9997796796881621,
+      "support": 59006.0
+    },
+    "Normal": {
+      "precision": 1.0,
+      "recall": 0.9333333333333333,
+      "f1-score": 0.9655172413793104,
+      "support": 15.0
+    },
+    "Reconnaissance": {
+      "precision": 0.9836247571468221,
+      "recall": 0.9957853329586963,
+      "f1-score": 0.9896676905892209,
+      "support": 3559.0
+    },
+    "accuracy": 0.99953,
+    "macro avg": {
+      "precision": 0.9958134902618992,
+      "recall": 0.9821039191929885,
+      "f1-score": 0.9886620041545344,
+      "support": 200000.0
+    },
+    "weighted avg": {
+      "precision": 0.9995335661985556,
+      "recall": 0.99953,
+      "f1-score": 0.9995310167945457,
+      "support": 200000.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      137356,
+      9,
+      0,
+      55
+    ],
+    [
+      11,
+      58992,
+      0,
+      3
+    ],
+    [
+      0,
+      0,
+      14,
+      1
+    ],
+    [
+      12,
+      3,
+      0,
+      3544
+    ]
+  ],
+  "feature_importance": {
+    "pkts": 0.046853964022371915,
+    "bytes": 0.13772658571343363,
+    "seq": 0.048999233300551455,
+    "dur": 0.06522083998820821,
+    "mean": 0.04010420688026075,
+    "stddev": 0.003080646782832614,
+    "sum": 0.0,
+    "min": 0.0,
+    "max": 0.06677279819579719,
+    "spkts": 0.010293061103801748,
+    "dpkts": 0.06419789275540659,
+    "sbytes": 0.0,
+    "dbytes": 0.0,
+    "rate": 0.0,
+    "srate": 0.0,
+    "drate": 0.04634935657347977,
+    "TnBPSrcIP": 0.013532546140677225,
+    "TnBPDstIP": 0.1541303201593719,
+    "TnP_PSrcIP": 0.01754563199516829,
+    "TnP_PDstIP": 0.08962707895982099,
+    "TnP_PerProto": 0.11606685632221368,
+    "TnP_Per_Dport": 0.004267497937108652,
+    "AR_P_Proto_P_SrcIP": 0.07523148316949567
+  }
+}

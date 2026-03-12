@@ -1,0 +1,110 @@
+2025-09-26 18:14:10,361 - src.common.utils - INFO - Using device: cuda (NVIDIA GeForce RTX 4080 SUPER)
+2025-09-26 18:14:10,361 - src.common.utils - INFO - Random seed set to 42
+2025-09-26 18:14:10,361 - __main__ - INFO - Phase 2 Evaluator initialized on cuda
+2025-09-26 18:14:10,361 - __main__ - INFO - Configuration: {'num_clients': 6, 'global_rounds': 10, 'local_epochs': 3, 'batch_size': 32, 'learning_rate': 0.001, 'attack_ratio': 0.3, 'support_ratio': 0.1, 'random_state': 42, 'device': 'cuda'}
+2025-09-26 18:14:10,361 - __main__ - INFO - 🚀 Starting Complete Phase 2 SOH-FL Evaluation
+2025-09-26 18:14:10,361 - __main__ - INFO - ============================================================
+2025-09-26 18:14:10,361 - __main__ - INFO - 
+==================== Data Preparation ====================
+2025-09-26 18:14:10,361 - __main__ - INFO - Step 1: Preparing federated data...
+2025-09-26 18:14:10,361 - src.common.utils - INFO - Random seed set to 42
+2025-09-26 18:14:10,361 - src.common.utils - INFO - Starting Data preparation...
+2025-09-26 18:14:10,361 - src.phase2_ids.federation.data_pipe_toniot - INFO - Loading TON-IoT profiles from ../dataset/TON-IoT/TON-IoT_standardized.csv
+2025-09-26 18:14:11,385 - src.phase2_ids.federation.data_pipe_toniot - INFO - Loaded 3606134 profiles with 15 features
+2025-09-26 18:14:18,476 - src.common.io - INFO - Data saved to data/processed/phase2_toniot/client_0/metadata.json
+2025-09-26 18:14:18,477 - src.phase2_ids.federation.data_pipe_toniot - INFO - Client 0: 590585 train, 281231 test, 65620 support
+2025-09-26 18:14:18,555 - src.common.io - INFO - Data saved to data/processed/phase2_toniot/client_1/metadata.json
+2025-09-26 18:14:18,556 - src.phase2_ids.federation.data_pipe_toniot - INFO - Client 1: 278604 train, 132669 test, 30955 support
+2025-09-26 18:14:18,723 - src.common.io - INFO - Data saved to data/processed/phase2_toniot/client_2/metadata.json
+2025-09-26 18:14:18,723 - src.phase2_ids.federation.data_pipe_toniot - INFO - Client 2: 739716 train, 352246 test, 82190 support
+2025-09-26 18:14:18,879 - src.common.io - INFO - Data saved to data/processed/phase2_toniot/client_3/metadata.json
+2025-09-26 18:14:18,879 - src.phase2_ids.federation.data_pipe_toniot - INFO - Client 3: 684313 train, 325863 test, 76034 support
+2025-09-26 18:14:18,972 - src.common.io - INFO - Data saved to data/processed/phase2_toniot/client_4/metadata.json
+2025-09-26 18:14:18,972 - src.phase2_ids.federation.data_pipe_toniot - INFO - Client 4: 375282 train, 178706 test, 41698 support
+2025-09-26 18:14:19,048 - src.common.io - INFO - Data saved to data/processed/phase2_toniot/client_5/metadata.json
+2025-09-26 18:14:19,048 - src.phase2_ids.federation.data_pipe_toniot - INFO - Client 5: 284925 train, 135679 test, 31658 support
+2025-09-26 18:14:19,060 - src.common.io - INFO - Data saved to data/processed/phase2_toniot/global_metadata.json
+2025-09-26 18:14:19,060 - src.phase2_ids.federation.data_pipe_toniot - INFO - Prepared federated data for 6 clients
+2025-09-26 18:14:19,063 - src.common.utils - INFO - Data preparation completed in 8.70s
+2025-09-26 18:14:19,063 - __main__ - INFO - ✅ Prepared data for 6 clients
+2025-09-26 18:14:19,063 - __main__ - INFO - 
+==================== Model Initialization ====================
+2025-09-26 18:14:19,063 - __main__ - INFO - Step 2: Initializing models...
+2025-09-26 18:14:19,140 - __main__ - INFO - ✅ Models initialized:
+2025-09-26 18:14:19,140 - __main__ - INFO -    CNN: 13 -> 2 classes
+2025-09-26 18:14:19,140 - __main__ - INFO -    CT-AE: 13 -> 32 latent dimensions
+2025-09-26 18:14:19,140 - __main__ - INFO - 
+==================== CT-AE Training ====================
+2025-09-26 18:14:19,140 - __main__ - INFO - Step 3: Training CT-AE for privacy preservation...
+2025-09-26 18:14:19,221 - __main__ - INFO - CT-AE training data: (2953425, 13)
+2025-09-26 18:14:19,594 - src.common.utils - INFO - Starting CT-AE training...
+2025-09-26 18:15:52,203 - __main__ - INFO - CT-AE Epoch 0: Loss = 1193483.3129
+2025-09-26 18:18:57,456 - __main__ - INFO - CT-AE Epoch 2: Loss = 895538.3817
+2025-09-26 18:22:03,094 - __main__ - INFO - CT-AE Epoch 4: Loss = 866734.3537
+2025-09-26 18:25:11,383 - __main__ - INFO - CT-AE Epoch 6: Loss = 859534.6445
+2025-09-26 18:28:21,196 - __main__ - INFO - CT-AE Epoch 8: Loss = 862822.9078
+2025-09-26 18:29:55,995 - src.common.utils - INFO - CT-AE training completed in 15.61m
+2025-09-26 18:29:55,995 - __main__ - INFO - ✅ CT-AE training completed
+2025-09-26 18:29:56,000 - __main__ - INFO - 
+==================== Federated Learning ====================
+2025-09-26 18:29:56,000 - __main__ - INFO - Step 4: Running federated learning simulation...
+2025-09-26 18:29:56,000 - src.common.utils - INFO - Starting Federated learning...
+2025-09-26 18:29:56,000 - __main__ - INFO - Round 1/10
+2025-09-26 18:29:56,050 - __main__ - INFO - Round 1: Global Accuracy = 0.9392
+2025-09-26 18:29:56,050 - __main__ - INFO - Round 2/10
+2025-09-26 18:29:56,100 - __main__ - INFO - Round 2: Global Accuracy = 0.9440
+2025-09-26 18:29:56,100 - __main__ - INFO - Round 3/10
+2025-09-26 18:29:56,148 - __main__ - INFO - Round 3: Global Accuracy = 0.9487
+2025-09-26 18:29:56,148 - __main__ - INFO - Round 4/10
+2025-09-26 18:29:56,196 - __main__ - INFO - Round 4: Global Accuracy = 0.9500
+2025-09-26 18:29:56,196 - __main__ - INFO - Round 5/10
+2025-09-26 18:29:56,242 - __main__ - INFO - Round 5: Global Accuracy = 0.9500
+2025-09-26 18:29:56,242 - __main__ - INFO - Round 6/10
+2025-09-26 18:29:56,288 - __main__ - INFO - Round 6: Global Accuracy = 0.9500
+2025-09-26 18:29:56,288 - __main__ - INFO - Round 7/10
+2025-09-26 18:29:56,334 - __main__ - INFO - Round 7: Global Accuracy = 0.9500
+2025-09-26 18:29:56,334 - __main__ - INFO - Round 8/10
+2025-09-26 18:29:56,380 - __main__ - INFO - Round 8: Global Accuracy = 0.9500
+2025-09-26 18:29:56,380 - __main__ - INFO - Round 9/10
+2025-09-26 18:29:56,426 - __main__ - INFO - Round 9: Global Accuracy = 0.9500
+2025-09-26 18:29:56,426 - __main__ - INFO - Round 10/10
+2025-09-26 18:29:56,471 - __main__ - INFO - Round 10: Global Accuracy = 0.9500
+2025-09-26 18:29:56,471 - src.common.utils - INFO - Federated learning completed in 0.47s
+2025-09-26 18:29:56,472 - __main__ - INFO - ✅ Federated learning completed
+2025-09-26 18:29:56,472 - __main__ - INFO - 
+==================== Self-Labeling Evaluation ====================
+2025-09-26 18:29:56,472 - __main__ - INFO - Step 5: Evaluating self-labeling capability...
+2025-09-26 18:29:56,476 - __main__ - INFO - Client client_0: Self-labeling accuracy = 0.8646
+2025-09-26 18:29:56,478 - __main__ - INFO - Client client_1: Self-labeling accuracy = 0.9109
+2025-09-26 18:29:56,480 - __main__ - INFO - Client client_2: Self-labeling accuracy = 0.9415
+2025-09-26 18:29:56,483 - __main__ - INFO - Client client_3: Self-labeling accuracy = 0.9209
+2025-09-26 18:29:56,484 - __main__ - INFO - Client client_4: Self-labeling accuracy = 0.9137
+2025-09-26 18:29:56,485 - __main__ - INFO - Client client_5: Self-labeling accuracy = 0.8496
+2025-09-26 18:29:56,485 - __main__ - INFO - ✅ Average self-labeling accuracy: 0.9002
+2025-09-26 18:29:56,485 - __main__ - INFO - 
+==================== Final Metrics ====================
+2025-09-26 18:29:56,485 - __main__ - INFO - Step 6: Calculating SOH-FL metrics...
+2025-09-26 18:29:56,485 - __main__ - INFO - ✅ SOH-FL metrics calculated
+2025-09-26 18:29:56,485 - __main__ - INFO - 
+==================== Saving Results ====================
+2025-09-26 18:29:56,485 - __main__ - INFO - Step 7: Saving results...
+2025-09-26 18:29:56,486 - __main__ - INFO - ✅ Results saved to: evaluation_logs/phase2_results
+2025-09-26 18:29:56,486 - __main__ - INFO - 
+🎉 Phase 2 Evaluation Completed Successfully!
+
+============================================================
+PHASE 2 SOH-FL EVALUATION RESULTS
+============================================================
+Final Global Accuracy: 0.9500
+Self-Labeling Accuracy: 0.9002
+Privacy Preservation: 0.8331
+Collaboration Improvement: 0.64%
+Adaptation Speed: 0.0012
+Compression Ratio: 0.4062
+============================================================
+
+SOH-FL Paper Targets:
+✅ Self-Labeling >80%: 90.0%
+✅ Collaboration 15-25%: 0.6%
+✅ Privacy Preservation: 83.3%
+✅ Feature Compression: 13→32 dims

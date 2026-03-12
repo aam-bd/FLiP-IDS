@@ -1,0 +1,59 @@
+==================================================
+Algorithm: PerAvg
+Local batch size: 40
+Local epochs: 3
+Local learing rate: 0.005
+Local learing rate decay: False
+Total number of clients: 6
+Clients join in each round: 0.6
+Clients randomly join: False
+Client drop rate: 0.0
+Client select regarding time: False
+Running times: 1
+Dataset: TON-IoT
+Number of classes: 9
+Backbone: cnn
+Using device: cuda
+Using DP: False
+Auto break: False
+Global rounds: 10
+Cuda device id: 0
+DLG attack: False
+Total number of new clients: 0
+Fine tuning epoches on new clients: 0
+==================================================
+
+============= Running time: 0th =============
+Creating server and clients ...
+FedAvgCNN_conv1(
+  (model1): Sequential(
+    (0): Conv1d(1, 16, kernel_size=(2,), stride=(1,))
+    (1): Sigmoid()
+    (2): MaxPool1d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (3): Conv1d(16, 32, kernel_size=(2,), stride=(1,))
+    (4): Sigmoid()
+    (5): MaxPool1d(kernel_size=4, stride=4, padding=0, dilation=1, ceil_mode=False)
+    (6): Flatten(start_dim=1, end_dim=-1)
+  )
+  (model2): Sequential(
+    (0): Linear(in_features=64, out_features=9, bias=True)
+    (1): Sigmoid()
+  )
+  (fc1): Sequential(
+    (0): Linear(in_features=9, out_features=512, bias=True)
+    (1): ReLU(inplace=True)
+  )
+  (fc): Linear(in_features=512, out_features=9, bias=True)
+)
+
+Join ratio / total clients: 0.6 / 6
+Finished creating server and clients.
+Traceback (most recent call last):
+  File "/home/T2430471/Downloads/Methodology Code/Untested Code/system/main.py", line 377, in <module>
+    run(args)
+  File "/home/T2430471/Downloads/Methodology Code/Untested Code/system/main.py", line 194, in run
+    server.train()
+  File "/home/T2430471/Downloads/Methodology Code/Untested Code/system/flcore/servers/serverperavg.py", line 71, in train
+    self.send_models()
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'PerAvg' object has no attribute 'send_models'. Did you mean: 'set_model'?

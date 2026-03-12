@@ -1,0 +1,68 @@
+2025-09-26 20:21:31,425 - __main__ - INFO - Starting CIC-IDS2017 SOH-FL Evaluation
+2025-09-26 20:21:31,434 - src.common.utils - INFO - Random seed set to 42
+2025-09-26 20:21:31,434 - __main__ - INFO - === CIC-IDS2017 Data Preparation ===
+2025-09-26 20:21:31,434 - __main__ - INFO - Loading data from /home/T2430471/Downloads/Methodology Code/Untested Code/dataset/CIC-IDS2017/CIC-IDS2017_cleaned.csv
+2025-09-26 20:21:37,138 - __main__ - INFO - Loaded 2827876 samples with 81 columns
+2025-09-26 20:21:37,942 - __main__ - INFO - After cleaning: 2827876 samples
+2025-09-26 20:21:38,034 - __main__ - INFO - Label distribution:
+2025-09-26 20:21:38,105 - __main__ - INFO -   BENIGN: 2,271,320
+2025-09-26 20:21:38,105 - __main__ - INFO -   DoS Hulk: 230,124
+2025-09-26 20:21:38,105 - __main__ - INFO -   PortScan: 158,804
+2025-09-26 20:21:38,105 - __main__ - INFO -   DDoS: 128,025
+2025-09-26 20:21:38,105 - __main__ - INFO -   DoS GoldenEye: 10,293
+2025-09-26 20:21:38,105 - __main__ - INFO -   FTP-Patator: 7,935
+2025-09-26 20:21:38,105 - __main__ - INFO -   SSH-Patator: 5,897
+2025-09-26 20:21:38,105 - __main__ - INFO -   DoS slowloris: 5,796
+2025-09-26 20:21:38,105 - __main__ - INFO -   DoS Slowhttptest: 5,499
+2025-09-26 20:21:38,105 - __main__ - INFO -   Bot: 1,956
+2025-09-26 20:21:38,105 - __main__ - INFO -   Web Attack � Brute Force: 1,507
+2025-09-26 20:21:38,105 - __main__ - INFO -   Web Attack � XSS: 652
+2025-09-26 20:21:38,105 - __main__ - INFO -   Infiltration: 36
+2025-09-26 20:21:38,105 - __main__ - INFO -   Web Attack � Sql Injection: 21
+2025-09-26 20:21:38,105 - __main__ - INFO -   Heartbleed: 11
+2025-09-26 20:21:40,675 - __main__ - INFO - Final data: 2827876 samples, 78 features, 15 classes
+2025-09-26 20:21:40,855 - __main__ - INFO - Client 0: 282787 samples
+2025-09-26 20:21:40,996 - __main__ - INFO - Client 1: 282787 samples
+2025-09-26 20:21:41,137 - __main__ - INFO - Client 2: 282787 samples
+2025-09-26 20:21:41,278 - __main__ - INFO - Client 3: 282787 samples
+2025-09-26 20:21:41,420 - __main__ - INFO - Client 4: 282787 samples
+2025-09-26 20:21:41,561 - __main__ - INFO - Client 5: 282787 samples
+2025-09-26 20:21:41,702 - __main__ - INFO - Client 6: 282787 samples
+2025-09-26 20:21:41,844 - __main__ - INFO - Client 7: 282787 samples
+2025-09-26 20:21:41,996 - __main__ - INFO - Client 8: 282787 samples
+2025-09-26 20:21:42,144 - __main__ - INFO - Client 9: 282793 samples
+2025-09-26 20:21:42,144 - __main__ - INFO - Simulating attack scenario...
+2025-09-26 20:21:42,857 - __main__ - INFO - Data preparation completed successfully
+2025-09-26 20:21:42,865 - __main__ - INFO - === CT-AE Training ===
+2025-09-26 20:21:43,035 - __main__ - INFO - Combined training data: (2536071, 78)
+2025-09-26 20:21:43,157 - __main__ - INFO - Starting CT-AE training...
+2025-09-26 20:21:58,875 - __main__ - INFO - Epoch 0/50: Loss=0.2395, Recon=0.3348, Cos=0.0173
+2025-09-26 20:24:29,123 - __main__ - INFO - Epoch 10/50: Loss=0.1455, Recon=0.2045, Cos=0.0080
+2025-09-26 20:26:58,157 - __main__ - INFO - Epoch 20/50: Loss=0.1494, Recon=0.2104, Cos=0.0071
+2025-09-26 20:29:25,543 - __main__ - INFO - Epoch 30/50: Loss=0.1425, Recon=0.2014, Cos=0.0049
+2025-09-26 20:31:53,050 - __main__ - INFO - Epoch 40/50: Loss=0.1531, Recon=0.2166, Cos=0.0049
+2025-09-26 20:34:06,116 - __main__ - INFO - CT-AE training completed in 12.38 minutes
+2025-09-26 20:34:06,142 - __main__ - ERROR - CT-AE training failed: Expected all tensors to be on the same device, but got mat1 is on cpu, different from other tensors on cuda:0 (when checking argument in method wrapper_CUDA_addmm)
+2025-09-26 20:34:06,142 - __main__ - ERROR - Evaluation failed: Expected all tensors to be on the same device, but got mat1 is on cpu, different from other tensors on cuda:0 (when checking argument in method wrapper_CUDA_addmm)
+Traceback (most recent call last):
+  File "/home/T2430471/Downloads/Methodology Code/Untested Code/iot-secure-framework/run_phase2_cicids_complete.py", line 573, in <module>
+    main()
+  File "/home/T2430471/Downloads/Methodology Code/Untested Code/iot-secure-framework/run_phase2_cicids_complete.py", line 547, in main
+    ct_ae, ct_ae_metrics = train_ct_autoencoder(client_data, metadata, dirs)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/T2430471/Downloads/Methodology Code/Untested Code/iot-secure-framework/run_phase2_cicids_complete.py", line 236, in train_ct_autoencoder
+    encoded = ct_ae.encode(X_tensor)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/T2430471/Downloads/Methodology Code/Untested Code/iot-secure-framework/src/phase2_ids/models/autoencoders.py", line 107, in encode
+    h = layer(h)
+        ^^^^^^^^
+  File "/home/T2430471/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/T2430471/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/T2430471/.local/lib/python3.12/site-packages/torch/nn/modules/linear.py", line 125, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected all tensors to be on the same device, but got mat1 is on cpu, different from other tensors on cuda:0 (when checking argument in method wrapper_CUDA_addmm)

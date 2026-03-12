@@ -1,0 +1,27 @@
+PHASE 2 SOH-FL EVALUATION RESULTS
+============================================================
+
+Dataset Information:
+  Dataset: TON-IoT (standardized)
+  Clients: 6
+  Global Rounds: 10
+  Local Epochs: 3
+  Attack Ratio: 0.3
+  Support Ratio: 0.1
+
+SOH-FL Performance Metrics:
+  Final Global Accuracy: 0.9500
+  Final Global Loss: 0.0558
+  Average Client Accuracy: 0.9470
+  Self-Labeling Accuracy: 0.9002
+  Privacy Preservation: 0.8331
+  Collaboration Improvement: 0.64%
+  Adaptation Speed: 0.0012
+  Compression Ratio: 0.4062
+  Reconstruction Error: 0.0731
+
+Paper Targets vs Achieved:
+  Self-Labeling >80%: ✅ (90.0%)
+  Collaboration 15-25%: ❌ (0.6%)
+  Privacy Preservation: ✅ (83.3%)
+  Feature Compression: ✅ (13→32 dims, 0.41 ratio)

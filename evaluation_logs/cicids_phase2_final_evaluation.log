@@ -1,0 +1,179 @@
+2025-09-26 23:54:09,541 - __main__ - INFO - Starting CIC-IDS2017 SOH-FL Evaluation
+2025-09-26 23:54:09,550 - src.common.utils - INFO - Random seed set to 42
+2025-09-26 23:54:09,550 - __main__ - INFO - === CIC-IDS2017 Data Preparation ===
+2025-09-26 23:54:09,550 - __main__ - INFO - Loading data from /home/T2430471/Downloads/Methodology Code/Untested Code/dataset/CIC-IDS2017/CIC-IDS2017_cleaned.csv
+2025-09-26 23:54:15,302 - __main__ - INFO - Loaded 2827876 samples with 81 columns
+2025-09-26 23:54:16,078 - __main__ - INFO - After cleaning: 2827876 samples
+2025-09-26 23:54:16,169 - __main__ - INFO - Label distribution:
+2025-09-26 23:54:16,240 - __main__ - INFO -   BENIGN: 2,271,320
+2025-09-26 23:54:16,240 - __main__ - INFO -   DoS Hulk: 230,124
+2025-09-26 23:54:16,240 - __main__ - INFO -   PortScan: 158,804
+2025-09-26 23:54:16,240 - __main__ - INFO -   DDoS: 128,025
+2025-09-26 23:54:16,240 - __main__ - INFO -   DoS GoldenEye: 10,293
+2025-09-26 23:54:16,240 - __main__ - INFO -   FTP-Patator: 7,935
+2025-09-26 23:54:16,240 - __main__ - INFO -   SSH-Patator: 5,897
+2025-09-26 23:54:16,240 - __main__ - INFO -   DoS slowloris: 5,796
+2025-09-26 23:54:16,240 - __main__ - INFO -   DoS Slowhttptest: 5,499
+2025-09-26 23:54:16,240 - __main__ - INFO -   Bot: 1,956
+2025-09-26 23:54:16,240 - __main__ - INFO -   Web Attack � Brute Force: 1,507
+2025-09-26 23:54:16,240 - __main__ - INFO -   Web Attack � XSS: 652
+2025-09-26 23:54:16,240 - __main__ - INFO -   Infiltration: 36
+2025-09-26 23:54:16,240 - __main__ - INFO -   Web Attack � Sql Injection: 21
+2025-09-26 23:54:16,240 - __main__ - INFO -   Heartbleed: 11
+2025-09-26 23:54:18,932 - __main__ - INFO - Final data: 2827876 samples, 78 features, 15 classes
+2025-09-26 23:54:19,110 - __main__ - INFO - Client 0: 282787 samples
+2025-09-26 23:54:19,249 - __main__ - INFO - Client 1: 282787 samples
+2025-09-26 23:54:19,388 - __main__ - INFO - Client 2: 282787 samples
+2025-09-26 23:54:19,526 - __main__ - INFO - Client 3: 282787 samples
+2025-09-26 23:54:19,666 - __main__ - INFO - Client 4: 282787 samples
+2025-09-26 23:54:19,804 - __main__ - INFO - Client 5: 282787 samples
+2025-09-26 23:54:19,944 - __main__ - INFO - Client 6: 282787 samples
+2025-09-26 23:54:20,083 - __main__ - INFO - Client 7: 282787 samples
+2025-09-26 23:54:20,222 - __main__ - INFO - Client 8: 282787 samples
+2025-09-26 23:54:20,361 - __main__ - INFO - Client 9: 282793 samples
+2025-09-26 23:54:20,361 - __main__ - INFO - Simulating attack scenario...
+2025-09-26 23:54:20,822 - __main__ - INFO - Data preparation completed successfully
+2025-09-26 23:54:20,829 - __main__ - INFO - === CT-AE Training ===
+2025-09-26 23:54:20,918 - __main__ - INFO - Combined training data: (2536071, 78)
+2025-09-26 23:54:20,919 - __main__ - INFO - Using device: cuda
+2025-09-26 23:54:21,048 - __main__ - INFO - Starting CT-AE training...
+2025-09-26 23:54:35,025 - __main__ - INFO - Epoch 0/50: Loss=0.1778, Recon=0.2456, Cos=0.0195
+2025-09-26 23:56:51,737 - __main__ - INFO - Epoch 10/50: Loss=0.1090, Recon=0.1533, Cos=0.0058
+2025-09-26 23:59:07,631 - __main__ - INFO - Epoch 20/50: Loss=0.1295, Recon=0.1827, Cos=0.0053
+2025-09-27 00:01:23,869 - __main__ - INFO - Epoch 30/50: Loss=0.1139, Recon=0.1599, Cos=0.0063
+2025-09-27 00:03:39,110 - __main__ - INFO - Epoch 40/50: Loss=0.1171, Recon=0.1651, Cos=0.0050
+2025-09-27 00:05:40,916 - __main__ - INFO - CT-AE training completed in 11.33 minutes
+2025-09-27 00:05:40,981 - __main__ - INFO - CT-AE Evaluation:
+2025-09-27 00:05:40,981 - __main__ - INFO -   Reconstruction Error: 0.1333
+2025-09-27 00:05:40,981 - __main__ - INFO -   Compression Ratio: 0.4103
+2025-09-27 00:05:40,981 - __main__ - INFO -   Privacy Preservation Score: 0.5204
+2025-09-27 00:05:40,984 - __main__ - INFO - === Federated Learning Simulation ===
+2025-09-27 00:05:40,984 - __main__ - INFO - Using device for FL: cuda:0
+2025-09-27 00:05:40,990 - __main__ - INFO - === Round 1/10 ===
+2025-09-27 00:05:41,294 - __main__ - INFO - Client 4: Acc=0.7798, Self-label=0.9067, Loss=2.7015
+2025-09-27 00:05:41,536 - __main__ - INFO - Client 0: Acc=0.7797, Self-label=0.9069, Loss=2.7015
+2025-09-27 00:05:41,778 - __main__ - INFO - Client 5: Acc=0.7805, Self-label=0.9070, Loss=2.7015
+2025-09-27 00:05:42,021 - __main__ - INFO - Client 1: Acc=0.7810, Self-label=0.9066, Loss=2.7015
+2025-09-27 00:05:42,263 - __main__ - INFO - Client 9: Acc=0.7796, Self-label=0.9068, Loss=2.7015
+2025-09-27 00:05:42,502 - __main__ - INFO - Client 3: Acc=0.7808, Self-label=0.9069, Loss=2.7015
+2025-09-27 00:05:42,922 - __main__ - INFO - Round 1 Results:
+2025-09-27 00:05:42,922 - __main__ - INFO -   Global Accuracy: 0.7805
+2025-09-27 00:05:42,922 - __main__ - INFO -   Global Loss: 2.7015
+2025-09-27 00:05:42,922 - __main__ - INFO -   Avg Client Accuracy: 0.7802
+2025-09-27 00:05:42,922 - __main__ - INFO -   Avg Self-Labeling Accuracy: 0.9068
+2025-09-27 00:05:42,922 - __main__ - INFO - === Round 2/10 ===
+2025-09-27 00:05:43,162 - __main__ - INFO - Client 9: Acc=0.7796, Self-label=0.9067, Loss=2.6932
+2025-09-27 00:05:43,403 - __main__ - INFO - Client 5: Acc=0.7805, Self-label=0.9067, Loss=2.6933
+2025-09-27 00:05:43,645 - __main__ - INFO - Client 6: Acc=0.7808, Self-label=0.9067, Loss=2.6932
+2025-09-27 00:05:43,885 - __main__ - INFO - Client 2: Acc=0.7810, Self-label=0.9067, Loss=2.6931
+2025-09-27 00:05:44,127 - __main__ - INFO - Client 4: Acc=0.7798, Self-label=0.9069, Loss=2.6932
+2025-09-27 00:05:44,369 - __main__ - INFO - Client 0: Acc=0.7797, Self-label=0.9068, Loss=2.6932
+2025-09-27 00:05:44,770 - __main__ - INFO - Round 2 Results:
+2025-09-27 00:05:44,770 - __main__ - INFO -   Global Accuracy: 0.7805
+2025-09-27 00:05:44,770 - __main__ - INFO -   Global Loss: 2.6932
+2025-09-27 00:05:44,770 - __main__ - INFO -   Avg Client Accuracy: 0.7802
+2025-09-27 00:05:44,770 - __main__ - INFO -   Avg Self-Labeling Accuracy: 0.9068
+2025-09-27 00:05:44,770 - __main__ - INFO - === Round 3/10 ===
+2025-09-27 00:05:45,012 - __main__ - INFO - Client 6: Acc=0.7808, Self-label=0.9064, Loss=2.6837
+2025-09-27 00:05:45,254 - __main__ - INFO - Client 2: Acc=0.7810, Self-label=0.9067, Loss=2.6834
+2025-09-27 00:05:45,495 - __main__ - INFO - Client 4: Acc=0.7798, Self-label=0.9065, Loss=2.6836
+2025-09-27 00:05:45,738 - __main__ - INFO - Client 0: Acc=0.7797, Self-label=0.9066, Loss=2.6838
+2025-09-27 00:05:45,977 - __main__ - INFO - Client 3: Acc=0.7808, Self-label=0.9069, Loss=2.6837
+2025-09-27 00:05:46,220 - __main__ - INFO - Client 1: Acc=0.7810, Self-label=0.9066, Loss=2.6838
+2025-09-27 00:05:46,632 - __main__ - INFO - Round 3 Results:
+2025-09-27 00:05:46,632 - __main__ - INFO -   Global Accuracy: 0.7805
+2025-09-27 00:05:46,632 - __main__ - INFO -   Global Loss: 2.6837
+2025-09-27 00:05:46,632 - __main__ - INFO -   Avg Client Accuracy: 0.7805
+2025-09-27 00:05:46,632 - __main__ - INFO -   Avg Self-Labeling Accuracy: 0.9066
+2025-09-27 00:05:46,632 - __main__ - INFO - === Round 4/10 ===
+2025-09-27 00:05:46,873 - __main__ - INFO - Client 2: Acc=0.7810, Self-label=0.9066, Loss=2.6698
+2025-09-27 00:05:47,115 - __main__ - INFO - Client 4: Acc=0.7798, Self-label=0.9068, Loss=2.6701
+2025-09-27 00:05:47,358 - __main__ - INFO - Client 0: Acc=0.7797, Self-label=0.9069, Loss=2.6703
+2025-09-27 00:05:47,601 - __main__ - INFO - Client 1: Acc=0.7810, Self-label=0.9068, Loss=2.6704
+2025-09-27 00:05:47,842 - __main__ - INFO - Client 6: Acc=0.7808, Self-label=0.9064, Loss=2.6702
+2025-09-27 00:05:48,084 - __main__ - INFO - Client 5: Acc=0.7805, Self-label=0.9065, Loss=2.6704
+2025-09-27 00:05:48,485 - __main__ - INFO - Round 4 Results:
+2025-09-27 00:05:48,485 - __main__ - INFO -   Global Accuracy: 0.7805
+2025-09-27 00:05:48,485 - __main__ - INFO -   Global Loss: 2.6702
+2025-09-27 00:05:48,485 - __main__ - INFO -   Avg Client Accuracy: 0.7805
+2025-09-27 00:05:48,485 - __main__ - INFO -   Avg Self-Labeling Accuracy: 0.9067
+2025-09-27 00:05:48,485 - __main__ - INFO - === Round 5/10 ===
+2025-09-27 00:05:48,727 - __main__ - INFO - Client 5: Acc=0.7805, Self-label=0.9067, Loss=2.6520
+2025-09-27 00:05:48,968 - __main__ - INFO - Client 6: Acc=0.7808, Self-label=0.9067, Loss=2.6519
+2025-09-27 00:05:49,211 - __main__ - INFO - Client 9: Acc=0.7796, Self-label=0.9064, Loss=2.6521
+2025-09-27 00:05:49,454 - __main__ - INFO - Client 1: Acc=0.7810, Self-label=0.9065, Loss=2.6520
+2025-09-27 00:05:49,692 - __main__ - INFO - Client 3: Acc=0.7808, Self-label=0.9066, Loss=2.6523
+2025-09-27 00:05:49,934 - __main__ - INFO - Client 2: Acc=0.7810, Self-label=0.9068, Loss=2.6518
+2025-09-27 00:05:50,334 - __main__ - INFO - Round 5 Results:
+2025-09-27 00:05:50,334 - __main__ - INFO -   Global Accuracy: 0.7805
+2025-09-27 00:05:50,334 - __main__ - INFO -   Global Loss: 2.6521
+2025-09-27 00:05:50,334 - __main__ - INFO -   Avg Client Accuracy: 0.7806
+2025-09-27 00:05:50,334 - __main__ - INFO -   Avg Self-Labeling Accuracy: 0.9066
+2025-09-27 00:05:50,334 - __main__ - INFO - === Round 6/10 ===
+2025-09-27 00:05:50,576 - __main__ - INFO - Client 1: Acc=0.7810, Self-label=0.9067, Loss=2.6304
+2025-09-27 00:05:50,818 - __main__ - INFO - Client 0: Acc=0.7797, Self-label=0.9067, Loss=2.6300
+2025-09-27 00:05:51,057 - __main__ - INFO - Client 3: Acc=0.7808, Self-label=0.9067, Loss=2.6305
+2025-09-27 00:05:51,299 - __main__ - INFO - Client 4: Acc=0.7798, Self-label=0.9066, Loss=2.6296
+2025-09-27 00:05:51,540 - __main__ - INFO - Client 5: Acc=0.7805, Self-label=0.9067, Loss=2.6302
+2025-09-27 00:05:51,782 - __main__ - INFO - Client 2: Acc=0.7810, Self-label=0.9069, Loss=2.6298
+2025-09-27 00:05:52,197 - __main__ - INFO - Round 6 Results:
+2025-09-27 00:05:52,197 - __main__ - INFO -   Global Accuracy: 0.7805
+2025-09-27 00:05:52,197 - __main__ - INFO -   Global Loss: 2.6301
+2025-09-27 00:05:52,197 - __main__ - INFO -   Avg Client Accuracy: 0.7805
+2025-09-27 00:05:52,197 - __main__ - INFO -   Avg Self-Labeling Accuracy: 0.9067
+2025-09-27 00:05:52,197 - __main__ - INFO - === Round 7/10 ===
+2025-09-27 00:05:52,438 - __main__ - INFO - Client 7: Acc=0.7805, Self-label=0.9066, Loss=2.6056
+2025-09-27 00:05:52,681 - __main__ - INFO - Client 4: Acc=0.7798, Self-label=0.9068, Loss=2.6057
+2025-09-27 00:05:52,923 - __main__ - INFO - Client 5: Acc=0.7805, Self-label=0.9067, Loss=2.6056
+2025-09-27 00:05:53,164 - __main__ - INFO - Client 2: Acc=0.7810, Self-label=0.9065, Loss=2.6053
+2025-09-27 00:05:53,408 - __main__ - INFO - Client 0: Acc=0.7797, Self-label=0.9069, Loss=2.6057
+2025-09-27 00:05:53,650 - __main__ - INFO - Client 6: Acc=0.7808, Self-label=0.9064, Loss=2.6057
+2025-09-27 00:05:54,048 - __main__ - INFO - Round 7 Results:
+2025-09-27 00:05:54,048 - __main__ - INFO -   Global Accuracy: 0.7805
+2025-09-27 00:05:54,048 - __main__ - INFO -   Global Loss: 2.6056
+2025-09-27 00:05:54,048 - __main__ - INFO -   Avg Client Accuracy: 0.7804
+2025-09-27 00:05:54,048 - __main__ - INFO -   Avg Self-Labeling Accuracy: 0.9066
+2025-09-27 00:05:54,048 - __main__ - INFO - === Round 8/10 ===
+2025-09-27 00:05:54,290 - __main__ - INFO - Client 1: Acc=0.7810, Self-label=0.9065, Loss=2.5759
+2025-09-27 00:05:54,532 - __main__ - INFO - Client 5: Acc=0.7805, Self-label=0.9070, Loss=2.5752
+2025-09-27 00:05:54,775 - __main__ - INFO - Client 9: Acc=0.7796, Self-label=0.9066, Loss=2.5735
+2025-09-27 00:05:55,015 - __main__ - INFO - Client 3: Acc=0.7808, Self-label=0.9066, Loss=2.5755
+2025-09-27 00:05:55,258 - __main__ - INFO - Client 6: Acc=0.7808, Self-label=0.9066, Loss=2.5751
+2025-09-27 00:05:55,500 - __main__ - INFO - Client 4: Acc=0.7798, Self-label=0.9065, Loss=2.5742
+2025-09-27 00:05:55,909 - __main__ - INFO - Round 8 Results:
+2025-09-27 00:05:55,909 - __main__ - INFO -   Global Accuracy: 0.7805
+2025-09-27 00:05:55,909 - __main__ - INFO -   Global Loss: 2.5749
+2025-09-27 00:05:55,909 - __main__ - INFO -   Avg Client Accuracy: 0.7804
+2025-09-27 00:05:55,909 - __main__ - INFO -   Avg Self-Labeling Accuracy: 0.9066
+2025-09-27 00:05:55,909 - __main__ - INFO - === Round 9/10 ===
+2025-09-27 00:05:56,150 - __main__ - INFO - Client 0: Acc=0.7797, Self-label=0.9065, Loss=2.5376
+2025-09-27 00:05:56,391 - __main__ - INFO - Client 5: Acc=0.7805, Self-label=0.9066, Loss=2.5387
+2025-09-27 00:05:56,632 - __main__ - INFO - Client 2: Acc=0.7810, Self-label=0.9065, Loss=2.5372
+2025-09-27 00:05:56,874 - __main__ - INFO - Client 8: Acc=0.7818, Self-label=0.9067, Loss=2.5385
+2025-09-27 00:05:57,115 - __main__ - INFO - Client 4: Acc=0.7798, Self-label=0.9064, Loss=2.5375
+2025-09-27 00:05:57,357 - __main__ - INFO - Client 7: Acc=0.7805, Self-label=0.9069, Loss=2.5362
+2025-09-27 00:05:57,759 - __main__ - INFO - Round 9 Results:
+2025-09-27 00:05:57,759 - __main__ - INFO -   Global Accuracy: 0.7805
+2025-09-27 00:05:57,759 - __main__ - INFO -   Global Loss: 2.5376
+2025-09-27 00:05:57,759 - __main__ - INFO -   Avg Client Accuracy: 0.7805
+2025-09-27 00:05:57,759 - __main__ - INFO -   Avg Self-Labeling Accuracy: 0.9066
+2025-09-27 00:05:57,759 - __main__ - INFO - === Round 10/10 ===
+2025-09-27 00:05:58,001 - __main__ - INFO - Client 1: Acc=0.7810, Self-label=0.9068, Loss=2.5075
+2025-09-27 00:05:58,242 - __main__ - INFO - Client 2: Acc=0.7810, Self-label=0.9068, Loss=2.5030
+2025-09-27 00:05:58,484 - __main__ - INFO - Client 8: Acc=0.7818, Self-label=0.9067, Loss=2.5031
+2025-09-27 00:05:58,725 - __main__ - INFO - Client 7: Acc=0.7805, Self-label=0.9068, Loss=2.5055
+2025-09-27 00:05:58,967 - __main__ - INFO - Client 4: Acc=0.7798, Self-label=0.9067, Loss=2.5046
+2025-09-27 00:05:59,208 - __main__ - INFO - Client 6: Acc=0.7808, Self-label=0.9067, Loss=2.5060
+2025-09-27 00:05:59,610 - __main__ - INFO - Round 10 Results:
+2025-09-27 00:05:59,610 - __main__ - INFO -   Global Accuracy: 0.7805
+2025-09-27 00:05:59,610 - __main__ - INFO -   Global Loss: 2.5051
+2025-09-27 00:05:59,610 - __main__ - INFO -   Avg Client Accuracy: 0.7808
+2025-09-27 00:05:59,610 - __main__ - INFO -   Avg Self-Labeling Accuracy: 0.9067
+2025-09-27 00:05:59,612 - __main__ - INFO - Results saved to evaluation_logs/cicids_results
+2025-09-27 00:05:59,612 - __main__ - INFO - === FINAL CIC-IDS2017 RESULTS ===
+2025-09-27 00:05:59,612 - __main__ - INFO - Final Global Accuracy: 0.7805
+2025-09-27 00:05:59,612 - __main__ - INFO - Self-Labeling Accuracy: 0.9067
+2025-09-27 00:05:59,612 - __main__ - INFO - Privacy Preservation: 0.5204
+2025-09-27 00:05:59,612 - __main__ - INFO - Collaboration Improvement: -8.17%
+2025-09-27 00:05:59,612 - __main__ - INFO - Compression Ratio: 0.4103
+2025-09-27 00:05:59,612 - __main__ - INFO - CIC-IDS2017 evaluation completed successfully!

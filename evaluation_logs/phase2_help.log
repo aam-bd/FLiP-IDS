@@ -1,0 +1,22 @@
+usage: cli.py [-h] [--verbose] [--random-state RANDOM_STATE] [--use-cuda]
+              {prepare-local,run-federation,encode-and-aggregate,evaluate,simulate-zero-day}
+              ...
+
+Phase 2 Federated Learning IDS CLI
+
+positional arguments:
+  {prepare-local,run-federation,encode-and-aggregate,evaluate,simulate-zero-day}
+                        Available commands
+    prepare-local       Prepare federated datasets
+    run-federation      Run federated learning
+    encode-and-aggregate
+                        Run CT-AE encoding and BS-Agg
+    evaluate            Evaluate federation results
+    simulate-zero-day   Simulate zero-day attack detection
+
+options:
+  -h, --help            show this help message and exit
+  --verbose, -v         Enable verbose logging (default: False)
+  --random-state RANDOM_STATE
+                        Random seed for reproducibility (default: 42)
+  --use-cuda            Use CUDA if available (default: False)

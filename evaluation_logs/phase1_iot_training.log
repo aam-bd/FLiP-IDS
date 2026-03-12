@@ -1,0 +1,38 @@
+2025-09-25 15:23:27,024 - src.common.utils - INFO - Random seed set to 42
+2025-09-25 15:23:27,024 - __main__ - INFO - Training IoT vs Non-IoT classifier
+2025-09-25 15:23:27,024 - __main__ - INFO - Starting IoT classifier training...
+2025-09-25 15:23:28,177 - __main__ - INFO - Dataset loaded: 3606134 samples, 14 features
+2025-09-25 15:23:28,180 - __main__ - INFO - Class distribution: IoT=10566040, Non-IoT=-6959906
+2025-09-25 15:23:28,180 - __main__ - INFO - Performing feature selection (top 35)
+2025-09-25 15:23:28,180 - src.phase1_profiling.selectors - INFO - Fitting Random Forest for feature selection...
+2025-09-25 15:23:28,180 - src.phase1_profiling.selectors - INFO - Starting Random Forest feature selection...
+2025-09-25 15:23:35,570 - src.phase1_profiling.selectors - INFO - Using threshold-based selection (alpha=0.003)
+2025-09-25 15:23:35,570 - src.phase1_profiling.selectors - INFO - Selected 14 features out of 14
+2025-09-25 15:23:35,570 - src.phase1_profiling.selectors - INFO - Top 10 most important features:
+2025-09-25 15:23:35,571 - src.phase1_profiling.selectors - INFO -    1. src_ip                    0.285145 ✓
+2025-09-25 15:23:35,571 - src.phase1_profiling.selectors - INFO -    2. feature_0                 0.119821 ✓
+2025-09-25 15:23:35,571 - src.phase1_profiling.selectors - INFO -    3. feature_12                0.086858 ✓
+2025-09-25 15:23:35,571 - src.phase1_profiling.selectors - INFO -    4. feature_1                 0.085753 ✓
+2025-09-25 15:23:35,571 - src.phase1_profiling.selectors - INFO -    5. feature_2                 0.084224 ✓
+2025-09-25 15:23:35,571 - src.phase1_profiling.selectors - INFO -    6. feature_8                 0.080091 ✓
+2025-09-25 15:23:35,571 - src.phase1_profiling.selectors - INFO -    7. feature_10                0.077712 ✓
+2025-09-25 15:23:35,571 - src.phase1_profiling.selectors - INFO -    8. feature_9                 0.043684 ✓
+2025-09-25 15:23:35,571 - src.phase1_profiling.selectors - INFO -    9. feature_6                 0.033119 ✓
+2025-09-25 15:23:35,571 - src.phase1_profiling.selectors - INFO -   10. feature_4                 0.028946 ✓
+2025-09-25 15:23:35,571 - src.phase1_profiling.selectors - INFO - Random Forest feature selection completed in 7.39s
+2025-09-25 15:23:35,628 - src.common.io - INFO - Generic model saved to models/iot_classifier.selector.joblib
+2025-09-25 15:23:35,628 - __main__ - INFO - Feature selector saved to models/iot_classifier.selector.joblib
+2025-09-25 15:23:35,628 - src.phase1_profiling.selectors - INFO - Evaluating feature selection quality...
+2025-09-25 15:25:02,696 - src.phase1_profiling.selectors - INFO - All features accuracy: 1.0000 ± 0.0000
+2025-09-25 15:25:02,696 - src.phase1_profiling.selectors - INFO - Selected features accuracy: 1.0000 ± 0.0000
+2025-09-25 15:25:02,696 - src.phase1_profiling.selectors - INFO - Accuracy ratio: 1.0000
+2025-09-25 15:25:02,696 - src.phase1_profiling.selectors - INFO - Feature reduction: 14/14 (100.00%)
+2025-09-25 15:25:02,697 - __main__ - INFO - Feature selection evaluation: {'accuracy_all_features': np.float64(1.0), 'accuracy_all_features_std': np.float64(0.0), 'accuracy_selected_features': np.float64(1.0), 'accuracy_selected_features_std': np.float64(0.0), 'accuracy_ratio': np.float64(1.0), 'feature_reduction_ratio': 1.0, 'num_original_features': 14, 'num_selected_features': 14}
+2025-09-25 15:25:02,697 - __main__ - INFO - Training Random Forest classifier
+2025-09-25 15:25:02,697 - src.common.utils - INFO - Random seed set to 42
+2025-09-25 15:25:02,706 - src.phase1_profiling.train_identifiers - INFO - Training IoT classifier with 3606134 samples, 14 features
+2025-09-25 15:25:02,713 - src.phase1_profiling.train_identifiers - INFO - Class distribution: [587076 591446 595686 287194 452262 442228 650242]
+2025-09-25 15:25:03,509 - src.phase1_profiling.train_identifiers - INFO - Starting IoT classifier training...
+2025-09-25 15:25:35,949 - src.phase1_profiling.train_identifiers - INFO - IoT classifier training completed in 32.44s
+2025-09-25 15:25:39,016 - __main__ - ERROR - IoT classifier training failed after 2.20m
+2025-09-25 15:25:39,016 - __main__ - ERROR - IoT classifier training failed: Target is multiclass but average='binary'. Please choose another average setting, one of [None, 'micro', 'macro', 'weighted'].

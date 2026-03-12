@@ -1,0 +1,10 @@
+2025-09-25 15:30:48,553 - __main__ - INFO - Preparing federated data from ../dataset/TON-IoT/TON-IoT_standardized.csv
+2025-09-25 15:30:48,553 - __main__ - INFO - Output directory: data/processed/phase2_local
+2025-09-25 15:30:48,553 - __main__ - INFO - Starting Data preparation...
+2025-09-25 15:30:48,562 - src.common.utils - INFO - Random seed set to 42
+2025-09-25 15:30:48,562 - src.phase2_ids.federation.data_pipe - INFO - Loading Phase 1 profiles from ../dataset/TON-IoT/TON-IoT_standardized.csv
+2025-09-25 15:30:49,650 - src.phase2_ids.federation.data_pipe - INFO - Loaded 3606134 profiles with 1 features
+2025-09-25 15:30:49,651 - __main__ - INFO - Simulating attacks with ratio 0.3
+2025-09-25 15:30:49,651 - src.phase2_ids.federation.data_pipe - INFO - Simulating attacks with ratio 0.3
+2025-09-25 15:30:49,816 - __main__ - ERROR - Data preparation failed after 1.26s
+2025-09-25 15:30:49,817 - __main__ - ERROR - Data preparation failed: 'packets_per_second'

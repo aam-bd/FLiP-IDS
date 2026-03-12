@@ -1,0 +1,91 @@
+# Phase 1 Feature Configuration - Hybrid Feature Set from Safi et al.
+# 58 total features across multiple categories
+
+feature_categories:
+  size_features:
+    - packet_length_min
+    - packet_length_max  
+    - packet_length_mean
+    - packet_length_std
+    - packet_length_variance
+    - total_bytes_forward
+    - total_bytes_backward
+    - bytes_per_second
+    
+  time_features:
+    - flow_duration
+    - flow_iat_mean
+    - flow_iat_std
+    - flow_iat_max
+    - flow_iat_min
+    - forward_iat_mean
+    - forward_iat_std
+    - backward_iat_mean
+    - backward_iat_std
+    - active_mean
+    - active_std
+    - idle_mean
+    - idle_std
+    
+  protocol_features:
+    - tcp_flag_count
+    - syn_flag_count
+    - ack_flag_count
+    - fin_flag_count
+    - rst_flag_count
+    - psh_flag_count
+    - urg_flag_count
+    - protocol_type
+    - has_tcp
+    - has_udp
+    - has_icmp
+    - has_arp
+    
+  service_features:
+    - src_port
+    - dst_port
+    - is_well_known_port
+    - port_class_src
+    - port_class_dst
+    - service_http
+    - service_https
+    - service_dns
+    - service_ntp
+    - service_dhcp
+    
+  statistical_features:
+    - packet_count_forward
+    - packet_count_backward
+    - packet_count_total
+    - packets_per_second
+    - down_up_ratio
+    - avg_packet_size
+    - variance_packet_size
+    - flow_bytes_per_packet
+    - min_seg_size_forward
+    - subflow_bytes_forward
+    - subflow_bytes_backward
+    - subflow_packets_forward
+    - subflow_packets_backward
+    
+  dns_features:
+    - dns_query_count
+    - dns_response_count
+    - dns_query_type_a
+    - dns_query_type_aaaa
+    - dns_query_type_ptr
+    - unique_dns_queries
+    
+# Feature selection parameters
+selection:
+  method: random_forest_importance
+  threshold_alpha: 0.003
+  top_k: 35
+  cross_validation_folds: 5
+
+# Feature preprocessing
+preprocessing:
+  normalize: true
+  handle_missing: median
+  remove_constant: true
+  remove_duplicates: true

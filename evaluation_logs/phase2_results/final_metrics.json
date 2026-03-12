@@ -1,0 +1,11 @@
+{
+  "final_global_accuracy": 0.9500000000000001,
+  "final_global_loss": 0.055812182230277445,
+  "avg_client_accuracy": 0.9470283098161699,
+  "self_labeling_accuracy": 0.9001956484243592,
+  "privacy_preservation": 0.8330993646838345,
+  "collaboration_improvement": 0.6381838928677508,
+  "adaptation_speed": 0.0011983442495581019,
+  "compression_ratio": 0.40625,
+  "reconstruction_error": 0.07312685734699155
+}

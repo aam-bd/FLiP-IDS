@@ -1,0 +1,28 @@
+PHASE 2 SOH-FL EVALUATION RESULTS - CIC-IDS2017
+============================================================
+
+Dataset Information:
+  Dataset: CIC-IDS2017 (cleaned)
+  Clients: 10
+  Global Rounds: 10
+  Local Epochs: 3
+  Attack Ratio: 0.3
+  Support Ratio: 0.1
+  Evaluation Date: 2025-09-27 00:05:59
+
+SOH-FL Performance Metrics:
+  Final Global Accuracy: 0.7805
+  Final Global Loss: 2.5051
+  Average Client Accuracy: 0.7805
+  Self-Labeling Accuracy: 0.9067
+  Privacy Preservation: 0.5204
+  Collaboration Improvement: -8.17%
+  Adaptation Speed: 0.0000
+  Compression Ratio: 0.4103
+  Reconstruction Error: 0.1333
+
+Paper Targets vs Achieved:
+  Self-Labeling >80%: ✅ (90.7%)
+  Collaboration 15-25%: ❌ (-8.2%)
+  Privacy Preservation: ❌ (52.0%)
+  Feature Compression: ✅ (Ratio: 0.41)

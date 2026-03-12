@@ -1,0 +1,35 @@
+2025-09-25 15:27:16,240 - src.common.utils - INFO - Random seed set to 42
+2025-09-25 15:27:16,240 - __main__ - INFO - Training device type classifier
+2025-09-25 15:27:16,240 - __main__ - INFO - Starting Device classifier training...
+2025-09-25 15:27:17,386 - __main__ - INFO - Dataset loaded: 3606134 samples, 14 features
+2025-09-25 15:27:17,394 - __main__ - INFO - Device types: [0 1 2 3 4 5 6]
+2025-09-25 15:27:17,404 - __main__ - INFO - Device type distribution: {np.int64(0): np.int64(587076), np.int64(1): np.int64(591446), np.int64(2): np.int64(595686), np.int64(3): np.int64(287194), np.int64(4): np.int64(452262), np.int64(5): np.int64(442228), np.int64(6): np.int64(650242)}
+2025-09-25 15:27:17,404 - __main__ - INFO - Training Random Forest device classifier
+2025-09-25 15:27:17,405 - src.common.utils - INFO - Random seed set to 42
+2025-09-25 15:27:17,430 - src.phase1_profiling.train_identifiers - INFO - Training device type classifier with 3606134 samples, 14 features
+2025-09-25 15:27:17,430 - src.phase1_profiling.train_identifiers - INFO - Device types: [np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6)]
+2025-09-25 15:27:17,440 - src.phase1_profiling.train_identifiers - INFO - Class distribution: {np.int64(0): np.int64(587076), np.int64(1): np.int64(591446), np.int64(2): np.int64(595686), np.int64(3): np.int64(287194), np.int64(4): np.int64(452262), np.int64(5): np.int64(442228), np.int64(6): np.int64(650242)}
+2025-09-25 15:27:18,198 - src.phase1_profiling.train_identifiers - INFO - Starting Device type classifier training...
+2025-09-25 15:27:50,827 - src.phase1_profiling.train_identifiers - INFO - Device type classifier training completed in 32.63s
+2025-09-25 15:27:54,038 - src.phase1_profiling.train_identifiers - INFO - Validation results:
+2025-09-25 15:27:54,038 - src.phase1_profiling.train_identifiers - INFO -   Accuracy: 1.0000
+2025-09-25 15:27:54,038 - src.phase1_profiling.train_identifiers - INFO -   Precision: 1.0000
+2025-09-25 15:27:54,038 - src.phase1_profiling.train_identifiers - INFO -   Recall: 1.0000
+2025-09-25 15:27:54,038 - src.phase1_profiling.train_identifiers - INFO -   F1-score: 1.0000
+2025-09-25 15:27:54,089 - src.phase1_profiling.train_identifiers - INFO - Top 10 most important features for device type classification:
+2025-09-25 15:27:54,089 - src.phase1_profiling.train_identifiers - INFO -    1. src_ip                    0.280503
+2025-09-25 15:27:54,089 - src.phase1_profiling.train_identifiers - INFO -    2. feature_0                 0.123445
+2025-09-25 15:27:54,089 - src.phase1_profiling.train_identifiers - INFO -    3. feature_2                 0.090937
+2025-09-25 15:27:54,089 - src.phase1_profiling.train_identifiers - INFO -    4. feature_12                0.081883
+2025-09-25 15:27:54,089 - src.phase1_profiling.train_identifiers - INFO -    5. feature_8                 0.079571
+2025-09-25 15:27:54,089 - src.phase1_profiling.train_identifiers - INFO -    6. feature_10                0.079308
+2025-09-25 15:27:54,089 - src.phase1_profiling.train_identifiers - INFO -    7. feature_1                 0.078871
+2025-09-25 15:27:54,089 - src.phase1_profiling.train_identifiers - INFO -    8. feature_9                 0.045296
+2025-09-25 15:27:54,089 - src.phase1_profiling.train_identifiers - INFO -    9. feature_6                 0.031915
+2025-09-25 15:27:54,089 - src.phase1_profiling.train_identifiers - INFO -   10. feature_4                 0.029657
+2025-09-25 15:30:03,368 - src.phase1_profiling.train_identifiers - INFO - Cross-validation accuracy: 1.0000 ± 0.0000
+2025-09-25 15:30:03,368 - __main__ - INFO - Cross-validation results: {'cv_accuracy_mean': np.float64(1.0), 'cv_accuracy_std': np.float64(0.0), 'cv_scores': [1.0, 1.0, 1.0, 1.0, 1.0]}
+2025-09-25 15:30:03,372 - src.common.io - INFO - Generic model saved to models/device_classifier.joblib
+2025-09-25 15:30:03,372 - src.phase1_profiling.train_identifiers - INFO - Device type classifier saved to models/device_classifier.joblib
+2025-09-25 15:30:03,372 - __main__ - INFO - Device classifier saved to models/device_classifier.joblib
+2025-09-25 15:30:03,372 - __main__ - INFO - Device classifier training completed in 2.79m

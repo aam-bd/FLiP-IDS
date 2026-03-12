@@ -1,0 +1,142 @@
+{
+  "dataset": "BoT-IoT-Complete",
+  "timestamp": "2025-09-28T07:35:42.103691",
+  "configuration": {
+    "clients": 6,
+    "classes": 4,
+    "features": 23
+  },
+  "ct_ae_metrics": {
+    "training_losses": [
+      0.2160006706700353,
+      0.11200543003751182,
+      0.13814198119782148
+    ],
+    "compression_ratio": 0.71875,
+    "latent_dim": 32,
+    "input_dim": 23
+  },
+  "federated_learning": {
+    "rounds": 3,
+    "final_accuracy": 0.8557183552614713,
+    "round_metrics": [
+      {
+        "round": 1,
+        "accuracy": 0.8481570635756194,
+        "loss": 0.36579821664602,
+        "participating_clients": 4,
+        "client_metrics": {
+          "0": {
+            "accuracy": 0.9141050442726754,
+            "loss": 0.24743257623061826,
+            "samples": 8448551
+          },
+          "1": {
+            "accuracy": 0.9121676708624152,
+            "loss": 0.25253365819650525,
+            "samples": 8448551
+          },
+          "5": {
+            "accuracy": 0.7934552464641983,
+            "loss": 0.4750821763394624,
+            "samples": 6689570
+          },
+          "2": {
+            "accuracy": 0.7729002927031886,
+            "loss": 0.4881444558174941,
+            "samples": 4930592
+          }
+        }
+      },
+      {
+        "round": 2,
+        "accuracy": 0.8484757579237876,
+        "loss": 0.35304272550474064,
+        "participating_clients": 4,
+        "client_metrics": {
+          "3": {
+            "accuracy": 0.7808027920379541,
+            "loss": 0.4694747538558855,
+            "samples": 4930592
+          },
+          "0": {
+            "accuracy": 0.9141476551248072,
+            "loss": 0.23605336837727933,
+            "samples": 8448551
+          },
+          "1": {
+            "accuracy": 0.9141064646344131,
+            "loss": 0.23887694042777202,
+            "samples": 8448551
+          },
+          "2": {
+            "accuracy": 0.7848461198979757,
+            "loss": 0.4677658393580258,
+            "samples": 4930592
+          }
+        }
+      },
+      {
+        "round": 3,
+        "accuracy": 0.8557183552614713,
+        "loss": 0.34449030806836844,
+        "participating_clients": 4,
+        "client_metrics": {
+          "4": {
+            "accuracy": 0.8022964697890986,
+            "loss": 0.449818066027944,
+            "samples": 6689571
+          },
+          "1": {
+            "accuracy": 0.920709252899195,
+            "loss": 0.22723855530967432,
+            "samples": 8448551
+          },
+          "0": {
+            "accuracy": 0.9216187578652532,
+            "loss": 0.22603856535585243,
+            "samples": 8448551
+          },
+          "3": {
+            "accuracy": 0.7782489404923384,
+            "loss": 0.4748660455800031,
+            "samples": 4930592
+          }
+        }
+      }
+    ]
+  },
+  "self_labeling": {
+    "overall_accuracy": 0.6314666666666666,
+    "client_results": {
+      "0": {
+        "accuracy": 0.6698,
+        "samples": 5000
+      },
+      "1": {
+        "accuracy": 0.669,
+        "samples": 5000
+      },
+      "2": {
+        "accuracy": 0.5936,
+        "samples": 5000
+      },
+      "3": {
+        "accuracy": 0.5894,
+        "samples": 5000
+      },
+      "4": {
+        "accuracy": 0.6408,
+        "samples": 5000
+      },
+      "5": {
+        "accuracy": 0.6262,
+        "samples": 5000
+      }
+    }
+  },
+  "privacy_preservation": {
+    "compression_ratio": 0.71875,
+    "latent_dimension": 32
+  }
+}

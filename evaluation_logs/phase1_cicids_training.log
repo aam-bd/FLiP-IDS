@@ -1,0 +1,38 @@
+2025-09-26 19:36:36,621 - src.common.utils - INFO - Random seed set to 42
+2025-09-26 19:36:36,621 - __main__ - INFO - Training device type classifier
+2025-09-26 19:36:36,621 - __main__ - INFO - Starting Device classifier training...
+2025-09-26 19:36:42,947 - __main__ - INFO - Dataset loaded: 2827876 samples, 80 features
+2025-09-26 19:36:43,629 - __main__ - INFO - Device types: ['BENIGN' 'Bot' 'DDoS' 'DoS GoldenEye' 'DoS Hulk' 'DoS Slowhttptest'
+ 'DoS slowloris' 'FTP-Patator' 'Heartbleed' 'Infiltration' 'PortScan'
+ 'SSH-Patator' 'Web Attack � Brute Force' 'Web Attack � Sql Injection'
+ 'Web Attack � XSS']
+2025-09-26 19:36:44,309 - __main__ - INFO - Device type distribution: {'BENIGN': np.int64(2271320), 'Bot': np.int64(1956), 'DDoS': np.int64(128025), 'DoS GoldenEye': np.int64(10293), 'DoS Hulk': np.int64(230124), 'DoS Slowhttptest': np.int64(5499), 'DoS slowloris': np.int64(5796), 'FTP-Patator': np.int64(7935), 'Heartbleed': np.int64(11), 'Infiltration': np.int64(36), 'PortScan': np.int64(158804), 'SSH-Patator': np.int64(5897), 'Web Attack � Brute Force': np.int64(1507), 'Web Attack � Sql Injection': np.int64(21), 'Web Attack � XSS': np.int64(652)}
+2025-09-26 19:36:44,309 - __main__ - INFO - Training Random Forest device classifier
+2025-09-26 19:36:44,310 - src.common.utils - INFO - Random seed set to 42
+2025-09-26 19:36:44,435 - src.phase1_profiling.train_identifiers - INFO - Training device type classifier with 2827876 samples, 80 features
+2025-09-26 19:36:44,435 - src.phase1_profiling.train_identifiers - INFO - Device types: ['BENIGN', 'Bot', 'DDoS', 'DoS GoldenEye', 'DoS Hulk', 'DoS Slowhttptest', 'DoS slowloris', 'FTP-Patator', 'Heartbleed', 'Infiltration', 'PortScan', 'SSH-Patator', 'Web Attack � Brute Force', 'Web Attack � Sql Injection', 'Web Attack � XSS']
+2025-09-26 19:36:44,444 - src.phase1_profiling.train_identifiers - INFO - Class distribution: {np.int64(0): np.int64(2271320), np.int64(1): np.int64(1956), np.int64(2): np.int64(128025), np.int64(3): np.int64(10293), np.int64(4): np.int64(230124), np.int64(5): np.int64(5499), np.int64(6): np.int64(5796), np.int64(7): np.int64(7935), np.int64(8): np.int64(11), np.int64(9): np.int64(36), np.int64(10): np.int64(158804), np.int64(11): np.int64(5897), np.int64(12): np.int64(1507), np.int64(13): np.int64(21), np.int64(14): np.int64(652)}
+2025-09-26 19:36:46,349 - src.phase1_profiling.train_identifiers - INFO - Starting Device type classifier training...
+2025-09-26 19:39:22,967 - src.phase1_profiling.train_identifiers - INFO - Device type classifier training completed in 2.61m
+2025-09-26 19:39:29,093 - src.phase1_profiling.train_identifiers - INFO - Validation results:
+2025-09-26 19:39:29,093 - src.phase1_profiling.train_identifiers - INFO -   Accuracy: 0.9995
+2025-09-26 19:39:29,093 - src.phase1_profiling.train_identifiers - INFO -   Precision: 0.9452
+2025-09-26 19:39:29,093 - src.phase1_profiling.train_identifiers - INFO -   Recall: 0.8752
+2025-09-26 19:39:29,093 - src.phase1_profiling.train_identifiers - INFO -   F1-score: 0.8998
+2025-09-26 19:39:29,166 - src.phase1_profiling.train_identifiers - INFO - Top 10 most important features for device type classification:
+2025-09-26 19:39:29,167 - src.phase1_profiling.train_identifiers - INFO -    1. day                       0.070588
+2025-09-26 19:39:29,167 - src.phase1_profiling.train_identifiers - INFO -    2. src_ip                    0.064959
+2025-09-26 19:39:29,167 - src.phase1_profiling.train_identifiers - INFO -    3. Destination Port          0.064096
+2025-09-26 19:39:29,167 - src.phase1_profiling.train_identifiers - INFO -    4. Init_Win_bytes_backward   0.041855
+2025-09-26 19:39:29,167 - src.phase1_profiling.train_identifiers - INFO -    5. Bwd Packets/s             0.023553
+2025-09-26 19:39:29,167 - src.phase1_profiling.train_identifiers - INFO -    6. Flow IAT Mean             0.022666
+2025-09-26 19:39:29,167 - src.phase1_profiling.train_identifiers - INFO -    7. Init_Win_bytes_forward    0.020932
+2025-09-26 19:39:29,167 - src.phase1_profiling.train_identifiers - INFO -    8. Average Packet Size       0.020866
+2025-09-26 19:39:29,167 - src.phase1_profiling.train_identifiers - INFO -    9. Flow IAT Std              0.020461
+2025-09-26 19:39:29,167 - src.phase1_profiling.train_identifiers - INFO -   10. Packet Length Mean        0.020235
+2025-09-26 19:51:06,303 - src.phase1_profiling.train_identifiers - INFO - Cross-validation accuracy: 0.9449 ± 0.1064
+2025-09-26 19:51:06,303 - __main__ - INFO - Cross-validation results: {'cv_accuracy_mean': np.float64(0.9449130542186301), 'cv_accuracy_std': np.float64(0.10639038617578966), 'cv_scores': [0.9968014908694852, 0.9991230163992397, 0.9974592229147328, 0.9990416832427176, 0.7321398576669761]}
+2025-09-26 19:51:06,379 - src.common.io - INFO - Generic model saved to models/cicids/device_classifier.joblib
+2025-09-26 19:51:06,379 - src.phase1_profiling.train_identifiers - INFO - Device type classifier saved to models/cicids/device_classifier.joblib
+2025-09-26 19:51:06,379 - __main__ - INFO - Device classifier saved to models/cicids/device_classifier.joblib
+2025-09-26 19:51:06,379 - __main__ - INFO - Device classifier training completed in 14.50m

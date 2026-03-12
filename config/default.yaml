@@ -1,0 +1,53 @@
+paths:
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  models: data/models
+
+phase1:
+  feature_set: hybrid58
+  top_k: 35
+  selector_threshold_alpha: 0.003
+  rf:
+    n_estimators: 300
+    max_depth: null
+    class_weight: balanced
+  test_size: 0.2
+  random_state: 42
+  flow_timeout: 120  # seconds
+  window_size: 60    # seconds
+
+phase2:
+  federation:
+    rounds: 50
+    clients: 10
+    participation: 0.6
+    local_epochs: 3
+    batch_size: 40
+    lr: 0.005
+    maml_beta: 0.001
+    gamma_top_helpers: 3
+    device_heterogeneity: 0.7  # statistical heterogeneity level
+  ct_ae:
+    latent_dim: 32
+    hidden_dims: [128, 64]
+    w_rec: 0.7
+    w_cos: 0.3
+    epochs: 10
+    lr: 0.001
+    batch_size: 32
+  cnn:
+    input_dim: 35  # matches phase1 top_k
+    hidden_channels: [64, 128, 64]
+    kernel_size: 3
+    dropout: 0.3
+    num_classes: 10  # adjust based on attack types
+
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+system:
+  random_seed: 42
+  use_cuda: true
+  num_workers: 4
