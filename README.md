@@ -5,6 +5,9 @@ A production-ready Python framework implementing a two-phase approach for securi
 1. **Phase 1**: Network discovery and device profiling using hybrid feature extraction
 2. **Phase 2**: Self-labeled personalized federated learning (SOH-FL) for collaborative intrusion detection
 
+### For full setup along with the datasets:
+https://drive.google.com/drive/u/0/folders/17qrmjJ2zyU_td13x1xkz4hNNSojdcK_C
+
 ## 🏗️ Architecture Overview
 
 ### Phase 1: Network Discovery and Device Profiling
